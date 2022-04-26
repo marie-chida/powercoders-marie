@@ -1,0 +1,13 @@
+
+position: relative
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    
+}
+
+main {
+    background-color: aquamarine;
+}
