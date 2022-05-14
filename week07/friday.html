@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="dataParagraph">Your data was: </p>
+    <input id="textInput" type="text" placeholder="Enter your data">
+    <button id="storeButton">Store</button>
+</body>
+
+<script>        
+    const storeButton = document.getElementById('storeButton');
+    const dataParagraph = document.getElementById('dataParagraph');
+    const textInput = document.getElementById('textInput');
+    const removeButton = document.getElementById('removeButton')       
+    
+    
+    const obj = JSON.parse(localStorage.getItem('heyThatIsMe'));
+    console.log(obj);
+
+    storeButton.onclick = () => {
+        localStorage.setItem('userInput', textInput.value);
+        localStorage.setItem('test123', 'Some other value');
+    refresh();
+    }        
+    removeButton.onclick = () => {
+       // localStorage.removeItem('userInput’);
+    localStorage.clear();      
+    textInput.value = '';
+    putDataIntoDOM();      
+    }
+    
+    function putDataIntoDOM(){
+
+        dataParagraph.innerText = `Your data was: &{localStorage.getItem('userInput')}`;
+    }
+
+    function refresh(){
+    dataParagraph.innerText = `Your data was ${localStorage.getItem('userInput')}`;
+    }        
+    refresh();    
+    
+</script>
+  
+</body>
+</html>

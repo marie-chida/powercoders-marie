@@ -1,25 +1,35 @@
+let langCode = prompt(`Please input en, "de", "lt" or "jp".`);
 
-function helloWorld(langCode){
+if(langCode === "en" || langCode === "de"|| langCode === "lt"|| langCode === "jp") {
+    document.write(`Your input is "${langCode}".`);
+    document.write("<br>");
+}
+
+
+
+function helloWorld(){
+    
         switch (langCode){
             case "en":
-                console.log("Hello world!");
+                document.write("Hello world! (in English)");
             break;
 
             case "de":
-                console.log("Guten Tag, Welt!");
+                document.write("Guten Tag, Welt! (in German)");
             break;
 
             case "lt":
-                console.log("Labas pasauli!");
+                document.write("Labas pasauli! (in Lithuanian)");
             break;
 
             case "jp":
-                console.log("ハローワールド！");
+                document.write("ハローワールド！ (in Japanese)");
             break;
 
             default:    
-                console.log("Hello world!");         
+                document.write(`Please input "en", "de", "lt" or "jp" without "".`)       
         }
+        return
 }
 
-helloWorld("lt");
+helloWorld(langCode);
