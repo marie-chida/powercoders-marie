@@ -1,11 +1,14 @@
-let yourName = "maRie";
+let yourName = prompt("Please input your first name. yoU CaN miX uPpercaSe aND LoweRcaSe") 
 
-let yourNameCapital = function(){
+let nam = [];
 
-    document.write(yourName[0].toUpperCase());   
+const hi = function(){
+    let capital = yourName[0].toUpperCase();
 
     for (let i=1; i < yourName.length; i++){
-        document.write(yourName[i].toLowerCase());
-    }    
-} 
-yourNameCapital();
+        nam[i] = yourName[i].toLowerCase();
+    }
+    document.write(`Have a good day, ${capital}${nam.join("")}!`);
+}
+
+hi();
